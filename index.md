@@ -842,3 +842,87 @@ please preview your site before committing, and make sure to run
   </ol>
 </div>
 {% endcomment %}
+
+<div id="PPython">
+  <h3>Performance Python</h3>
+  <h4>Faster Python code using performance computing </h4>
+
+  This lesson's material can be found at: https://nesi.github.io/perf-training/python-scatter.  We'll touch only a small part of the material therein - feel free to explore and try more ways to accelerate your code after this workshop.
+
+  This tutorial assumes that you have
+
+  * Anaconda 3 installed
+  * conda install gprof2dot
+  * conda install graphviz
+  * conda install git (on Windows)
+
+  You'll also need to have an editor of your choice installed. Mac OS X and Linux come with vim, nano. On Windows you may use notepad
+
+  notepad <filename>
+
+  On Windows, we recommend that you type your commands inside the Bash git window. Alternatively you can also type the commands inside the Anaconda prompt window. 
+
+  Windows: 
+
+      Install Anaconda and tick the checkbox to allow the Windows installer to modify the PATH variable.
+
+      This will make Anaconda Python available in Git Bash.
+
+
+      If you already a have an installation of Anaconda, check if your PATH variable is set up by running the "which python" command in Git Bash.
+
+      If the result is "which: no python [...]", you will need to add your Anaconda installation:
+
+      1. Locate your Anaconda installation, e.g., under "<username>\AppData\Local\Continuum\anaconda3" or "C:\Anaconda" or "C:\Anaconda3"
+
+      2. Open Windows Start Menu or the control panel and type "environment variables", then click on "Edit environment variables for your account"
+
+      3. Select "Path" in the "User variables for <username> section and click on "Edit..."
+
+      4. Click on "New" and add the Anaconda installation directory
+
+
+  2. Install "dot" by running command "conda install graphviz"
+
+      Add graphviz to your "Path" variable:
+
+      1. Locate your Anaconda installation, e.g., under "<username>\AppData\Local\Continuum\anaconda3" or "C:\Anaconda" or "C:\Anaconda3"
+
+      2. Open Windows Start Menu or the control panel and type "environment variables", then click on "Edit environment variables for your account"
+
+      3. Select "Path" in the "User variables for <username> section and click on "Edit..."
+
+      4. Click on "New" and add the full path to graphviz, e.g., "C:\Users\<username>\AppData\Local\Continuum\anaconda3/Library/bin/graphviz"
+
+
+      If that fails, download graphviz from this URL,
+
+      https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.zip
+
+      and unpack the archive into, e.g., "C:\Users\<username>\Tools\GraphViz\bin\"
+
+      Follow the instructions above to add this path to your "Path" variable
+
+
+  3. install line_profiler
+
+      a) pip install line_profiler
+
+      b) if a) fails due to missing Visual C++ packages, download https://www.lfd.uci.edu/~gohlke/pythonlibs/  line_profiler‑2.1.2‑cp37‑cp37m‑win32.whl  OR  line_profiler‑2.1.2‑cp37‑cp37m‑win_amd64.whl 
+
+      and use command: pip install ~/Downloads/line_profiler‑2.1.2‑cp37‑cp37m‑win_amd64.whl
+
+
+  Check that everything works by typing
+
+  python -c "import numpy"
+  which gprof2dot
+  which dot
+
+  The tutorial is based on the scatter code, download the code using 
+
+  git clone https://github.com/pletzer/scatter.git
+
+  gprof2dot --colour-nodes-by-selftime -f pstats output.pstats | \
+      dot -Tpng -o output.png
+</div>
