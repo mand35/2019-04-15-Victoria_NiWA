@@ -846,16 +846,16 @@ please preview your site before committing, and make sure to run
 <div id="PPython">
   <h3>Performance Python</h3>
   <h4>Faster Python code using performance computing </h4>
-
+  <p>
   This lesson's material can be found at: https://nesi.github.io/perf-training/python-scatter.  We'll touch only a small part of the material therein - feel free to explore and try more ways to accelerate your code after this workshop.
-
+  </p>
   This tutorial assumes that you have
-
-  * Anaconda 3 installed
-  * conda install gprof2dot
-  * conda install graphviz
-  * conda install git (on Windows)
-
+  <ol>
+    <li>Anaconda 3 installed</li>
+    <li>conda install gprof2dot</li>
+    <li>conda install graphviz</li>
+    <li>conda install git (on Windows)/</li>
+  </ol>
   You'll also need to have an editor of your choice installed. Mac OS X and Linux come with vim, nano. On Windows you may use notepad
 
   notepad <filename>
